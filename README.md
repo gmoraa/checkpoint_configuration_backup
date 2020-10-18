@@ -26,4 +26,4 @@ This playbook is based on [**cli_command**](https://docs.ansible.com/ansible/2.9
 This **is not** a snapshot of the device and this **is not** a policies backup.
 
 ## Owner
-[Giancarlo Mora](emailto:giank.ma@gmail.com)
+[Giancarlo Mora](mailto:giank.ma@gmail.com)
