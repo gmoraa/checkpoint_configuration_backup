@@ -1,0 +1,10 @@
+- name: "remove sensitive information"
+  lineinfile:
+     path: ../backups/{{ inventory_hostname }}.txt
+     regexp: "{{ item }}"
+     state: absent
+  delegate_to: localhost
+  with_items:
+    - "Exported by admin on"
+    - 'add administrator username "admin" password-hash'
+    - 'set expert-password hash'

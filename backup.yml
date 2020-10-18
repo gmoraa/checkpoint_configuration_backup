@@ -1,0 +1,17 @@
+- name: "set clish"
+  cli_command:
+    command: clish
+  register: setclish
+  failed_when: setclish is undefined or setclish is none or setclish == ''
+
+- name: "set pager"
+  cli_command:
+    command: set clienv rows 0
+
+- name: "show config"
+  cli_command:
+    command: show configuration
+  register: fw_config
+
+- name: "store backup"
+  local_action:  copy content={{ fw_config.stdout_lines|join('\n') }} dest=./backups/{{ inventory_hostname }}.txt

@@ -1,0 +1,7 @@
+- name: "setup backup dir"
+  file:
+    path: ./backups
+    state: directory
+    mode: '0755'
+  delegate_to: localhost
+  run_once: True
